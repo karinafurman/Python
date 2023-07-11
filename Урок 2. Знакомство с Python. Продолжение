@@ -1,0 +1,60 @@
+# Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
+n = input("Введите вещественное число ")
+x = n.split(".")
+a = int(x[0])
+b = int(x[1])
+sum = 0
+while a != 0:
+    sum = sum + a%10
+    a = a // 10
+while b != 0:
+    sum = sum + b%10
+    b = b // 10
+print(sum)
+
+# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+N = int(input('Введите количество чисел в списке '))
+N += 1
+m = list(range(1, N))
+print(m)
+def multiply(m):
+    a = 1
+    for el in m:
+        a *= el
+    return a
+print(multiply(m))
+
+# Задайте список из n чисел последовательности (1 + 1\n)^n и выведите на экран их сумму.
+
+n = int(input('Введите количество чисел в списке '))
+a = n
+count = 0
+sum = 0
+while count < a:
+    c = float((1 + 1/n)**n)
+    count +=1
+    n += 1
+    sum = sum + c
+    print(c)
+print(sum)
+
+# Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+# Найдите произведение элементов на указанных пользователем через пробел позициях.
+
+N = int(input('Введите количество чисел в списке '))
+from random import randint
+my_list = []
+for i in range(-N, N):
+    my_list.append(randint(-10, 10))
+print(my_list)
+
+Реализуйте алгоритм перемешивания списка.
+
+import random
+
+n = int(input("Введите число: "))
+a = list(range(0, n))
+
+random.shuffle(a)
+print(a)
+    
