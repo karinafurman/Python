@@ -1,0 +1,49 @@
+name = input("Наименование договора: ")
+date = input("Дата договора: ")
+number = input("Номер договора: ")
+legal_form = input("Орг.-прав. форма контрагента: ")
+contr_name = input("Наименование контрагента: ")
+contr_choise = input("Выберите наименование стороны контрагента: 1 - поставщик, 2 - продавец, 3 - исполнитель, 4 - подрядчик: ")
+if contr_choise == 1:
+    contr_patry_1 = "Поставщик"
+    contr_party_2 = "Поставщика"
+    contr_party_3 = "Поставщиком"
+elif contr_choise == 2:
+    contr_patry_1 = "Продавец"
+    contr_party_2 = "Продавца"
+    contr_party_3 = "Продавцом"
+elif contr_choise == 3:
+    contr_patry_1 = "Исполнитель"
+    contr_party_2 = "Исполнителя"
+    contr_party_3 = "Исполнителем"
+elif contr_choise == 4:
+    contr_patry_1 = "Подрядчик"
+    contr_party_2 = "Подрядчика"
+    contr_party_3 = "Подрядчиком"
+else:
+    print("Неверный выбор наименования стороны контрагента")
+our_choise = input("Выберите наименование нашей строны: 1 - покупатель, 2 - заказчик: ")
+if our_choise == 1:
+    our_patry_1 = "Покупатель"
+    our_party_2 = "Покупателя"
+    our_party_3 = "Покупателем"
+elif our_choise == 2:
+    our_patry_1 = "Заказчик"
+    our_party_2 = "Заказчика"
+    our_party_3 = "Заказчиком"
+else:
+    print("Неверный выбор наименования нашей стороны")
+contr_SEO = input("Должность подписанта контрагента: ")
+contr_SEO_name = input("Имя подписанта контрагента: ")
+our_party_1 = input("Введите должность нашего подписанта: ")
+our_SEO = input("Введите имя нашего подписанта: ")
+
+
+
+from docxtpl import DocxTemplate
+
+path = "C:\\Users\\user\\Desktop\\pover\\scans\\upto\\ProtokolForm.docx"
+doc = DocxTemplate(path)
+context = {"name", "date", "number", "legal_form", "contr_name", "contr_party_1", "contr_party_2", "contr_party_3", "our_party_1", "our_party_2", "our_party_3", "contr_SEO", "contr_SEO_name", "our_SEO", "our_SEO_name", "left_form_1", "right_form_top_1", "right_form_basement_1", "left_form_2", "right_form_top_2", "right_form_basement_2", "left_form_3", "right_form_top_3", "right_form_basement_3", "left_form_4", "right_form_top_4", "right_form_basement_4", "left_form_5", "right_form_top_5", "right_form_basement_5"}
+doc.render(context)
+doc.save("опись.docx")
